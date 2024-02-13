@@ -1,0 +1,18 @@
+alias myip="curl -s https://ipnumberia.com/ | tee >(grep '<td>' | sed -n '3p' | cut -d '>' -f 2 | cut -d '<' -f 1 | sed -e 's/.*/\o033[34m&\o033[0m/') >(grep 'div class=\"ip\"' | cut -d '>' -f 2 | cut -d '<' -f 1 | sed -e 's/.*/\o033[34m&\o033[0m/') >/dev/null"
+alias nekoray="sudo ~/elo/apps/nekoray/launcher"
+alias cp="cp -iv"
+alias mv="mv -iv"
+alias rm="rm -v"
+alias mkd="mkdir -pv"
+alias ipython="python3 -m IPython"
+alias gifgen="~/elo/apps/gifgen/gifgen"
+alias bonbast="python3 -m bonbast"
+alias cptmux="tmux show-buffer | xclip -selection clipboard"
+alias removeMetaTags='~/elo/apps/metatagsdelete.sh'
+alias offConservativeMode='echo 0 | sudo tee /sys/bus/platform/drivers/ideapad_acpi/VPC2004:00/conservation_mode > /dev/null'
+alias onConvervativeMode='echo 1 | sudo tee /sys/bus/platform/drivers/ideapad_acpi/VPC2004:00/conservation_mode > /dev/null'
+alias hiddify='sudo nohup ~/elo/apps/hiddify-linux-x64/hiddify-linux-x64.AppImage >/dev/null 2>&1 &'
+
+
+
+
