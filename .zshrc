@@ -131,6 +131,9 @@ bindkey -M vicmd v edit-command-line
 # Codon compiler path (added by install script)
 export PATH=/home/elo/.codon/bin:$PATH
 
+# add cargo
+export PATH=/home/elo/.cargo/bin:$PATH
+
 # adding backwards search
 bindkey -v
 bindkey '^R' history-incremental-search-backward
