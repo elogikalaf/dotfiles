@@ -193,3 +193,6 @@ o3Login() {
 export PATH=$PATH:/usr/bin/gcc
 
 
+# add brew
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
