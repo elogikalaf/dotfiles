@@ -139,7 +139,7 @@ bindkey -v
 bindkey '^R' history-incremental-search-backward
 
 # fuck 
-eval $(thefuck --alias)
+# eval $(thefuck --alias)
 
 # remove meta tags
 rmMetaTags() {
