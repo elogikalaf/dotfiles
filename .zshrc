@@ -118,4 +118,22 @@ case ":$PATH:" in
 esac
 # pnpm end
 
+# reverse search
+bindkey "^R" history-incremental-search-backward
+
+# thefuck
+eval $(thefuck --alias)
+
+# configuring PATH
+# adding cargo
+export PATH="/home/elo/.cargo/bin:$PATH"
+
+# done configuring PATH
+
+
+
+
+
+
+
 
