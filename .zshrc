@@ -1,17 +1,8 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
-if [[ -f "/opt/homebrew/bin/brew" ]] then
-  # If you're using macOS, you'll want this enabled
-  eval "$(/opt/homebrew/bin/brew shellenv)"
-fi
-
 # Set the directory we want to store zinit and plugins
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
+
+# adding home/elo/bin for ruby gem programs and oh-my-posh
+export PATH="/home/elo/bin:$PATH"
 
 # Download Zinit, if it's not there yet
 if [ ! -d "$ZINIT_HOME" ]; then
@@ -22,8 +13,6 @@ fi
 # Source/Load zinit
 source "${ZINIT_HOME}/zinit.zsh"
 
-# Add in Powerlevel10k
-zinit ice depth=1; zinit light romkatv/powerlevel10k
 
 # Add in zsh plugins
 zinit light zsh-users/zsh-syntax-highlighting
@@ -41,8 +30,8 @@ autoload -Uz compinit && compinit
 
 zinit cdreplay -q
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# Init oh-my-posh
+eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/base.yaml)"
 
 # use vim Keybindings
 bindkey -v
@@ -129,8 +118,8 @@ eval $(thefuck --alias)
 export PATH="/home/elo/.cargo/bin:$PATH"
 #adding .local/bin
 export PATH="/home/elo/.local/bin:$PATH"
-# adding home/elo/bin for ruby gem programs
-export PATH="/home/elo/bin:$PATH"
+# add spicetify
+export PATH=$PATH:/home/elo/.spicetify
 ################ done configuring PATH
 
 ## set editor to vim
@@ -142,4 +131,3 @@ cheatsh() {
 }
 
 
-export PATH=$PATH:/home/elo/.spicetify
