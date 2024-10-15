@@ -124,16 +124,22 @@ bindkey "^R" history-incremental-search-backward
 # thefuck
 eval $(thefuck --alias)
 
-# configuring PATH
+################# configuring PATH
 # adding cargo
 export PATH="/home/elo/.cargo/bin:$PATH"
+#adding .local/bin
+export PATH="/home/elo/.local/bin:$PATH"
+# adding home/elo/bin for ruby gem programs
+export PATH="/home/elo/bin:$PATH"
+################ done configuring PATH
 
-# done configuring PATH
+## set editor to vim
+export EDITOR="/usr/bin/nvim"
+
+## cheatsh alias 
+cheatsh() {
+    curl cheat.sh/"$1"
+}
 
 
-
-
-
-
-
-
+export PATH=$PATH:/home/elo/.spicetify

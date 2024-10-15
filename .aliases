@@ -1,4 +1,5 @@
 alias myip="curl -s https://ipnumberia.com/ | tee >(grep '<td>' | sed -n '3p' | cut -d '>' -f 2 | cut -d '<' -f 1 | sed -e 's/.*/\o033[34m&\o033[0m/') >(grep 'div class=\"ip\"' | cut -d '>' -f 2 | cut -d '<' -f 1 | sed -e 's/.*/\o033[34m&\o033[0m/') >/dev/null"
+alias myip2="curl -s http://ip-api.com/json/ | jq"
 alias nekoray="sudo ~/elo/apps/nekoray/launcher"
 alias cp="cp -iv"
 alias mv="mv -iv"
@@ -12,9 +13,16 @@ alias removeMetaTags='~/elo/apps/metatagsdelete.sh'
 alias offConservativeMode='echo 0 | sudo tee /sys/bus/platform/drivers/ideapad_acpi/VPC2004:00/conservation_mode > /dev/null'
 alias onConvervativeMode='echo 1 | sudo tee /sys/bus/platform/drivers/ideapad_acpi/VPC2004:00/conservation_mode > /dev/null'
 alias hiddify='nohup sudo ~/elo/apps/hiddify-linux-x64/hiddify-linux-x64.AppImage >/dev/null 2>&1 &'
+alias hiddify2='nohup sudo ~/elo/apps/hiddify-linux-x64/hiddify-linux-x64v2.2.0.AppImage >/dev/null 2>&1 &'
 alias mpvOpen='~/elo/apps/mpvOpen.sh'
 alias minecraft='java -jar ~/Games/minecraft/TLauncher.v10/TLauncher.jar'
 alias ddterm='~/.local/share/gnome-shell/extensions/ddterm@amezin.github.com/bin/com.github.amezin.ddterm'
+alias durationCalc='~/elo/apps/durationCalculate.sh'
+alias mux='tmuxinator'
+alias nowtime='date +"%T"' #this will show the current time in 24hrs format as HH:MM:SS
+alias nowdate='date +"%d-%m-%Y"' #this will show the current date in format dd-MM-YY
+alias flameshot='/bin/flameshot-workaround'
+alias clear='clear -x'
 
 
 
