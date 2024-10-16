@@ -1,8 +1,6 @@
 # Set the directory we want to store zinit and plugins
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 
-# adding home/elo/bin for ruby gem programs and oh-my-posh
-export PATH="/home/elo/bin:$PATH"
 
 # Download Zinit, if it's not there yet
 if [ ! -d "$ZINIT_HOME" ]; then
@@ -13,21 +11,26 @@ fi
 # Source/Load zinit
 source "${ZINIT_HOME}/zinit.zsh"
 
+# add ~/bin for ohmyposh and ruby gems exetubales
+export PATH="/home/elo/bin:$PATH"
 
 # Add in zsh plugins
-zinit light zsh-users/zsh-syntax-highlighting
-zinit light zsh-users/zsh-completions
-zinit light zsh-users/zsh-autosuggestions
-zinit light Aloxaf/fzf-tab
+zinit light zsh-users/zsh-syntax-highlighting ## code zsh-syntax-highlighting
+zinit light zsh-users/zsh-completions # automatcially load completetion for example for go
+zinit light zsh-users/zsh-autosuggestions # show suggestions based on history
+zinit light Aloxaf/fzf-tab # fuzzy find when tab autocomplete
 
-# Add in snippets
-zinit snippet OMZP::git
-zinit snippet OMZP::sudo
-zinit snippet OMZP::command-not-found
+# Add in snippets, basically installs plugins from a url or a namespce
+zinit snippet OMZP::git # installs the git autocomplete and aliases from oh my zsh
+zinit snippet OMZP::sudo # execute with sudo by pressing esc twice
+zinit snippet OMZP::command-not-found ## allows zsh to suggest intalling a command if not found
+zinit snippet OMZP::dnf ## autocomplete and aliases for dnf
+zinit snippet OMZP::aliases ## lets you organize aliases with the als command
 
 # Load completions
 autoload -Uz compinit && compinit
 
+# performance gain, suggested by the doc, idk what it does
 zinit cdreplay -q
 
 # Init oh-my-posh
@@ -38,6 +41,7 @@ bindkey -v
 
 # Keybindings
 bindkey '^[w' kill-region
+
 # history search with up or down command
 autoload -U up-line-or-beginning-search
 autoload -U down-line-or-beginning-search
@@ -50,21 +54,20 @@ bindkey "^[[B" down-line-or-beginning-search # Down
 HISTSIZE=5000
 HISTFILE=~/.zsh_history
 SAVEHIST=$HISTSIZE
-HISTDUP=erase
-setopt appendhistory
-setopt sharehistory
-setopt hist_ignore_space
+HISTDUP=erase # erases duplicatess
+setopt appendhistory # basially zsh appends instead of overwriting
+setopt sharehistory # shares command history between multiple sessions
+setopt hist_ignore_space 
 setopt hist_ignore_all_dups
 setopt hist_save_no_dups
 setopt hist_ignore_dups
 setopt hist_find_no_dups
 
 # Completion styling
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
-zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
-zstyle ':completion:*' menu no
-zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
-zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}' # case insensitive when using tab autocomplete
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}" # use ls colors for autocomplete
+zstyle ':completion:*' menu no # disables the deafult zsh autocomplete tab so it can be replaced with fzf
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath' # allows to autocomplete fzf 
 
 # Aliases
 alias ls='ls --color'
