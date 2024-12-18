@@ -23,6 +23,7 @@ alias nowtime='date +"%T"' #this will show the current time in 24hrs format as H
 alias nowdate='date +"%d-%m-%Y"' #this will show the current date in format dd-MM-YY
 alias flameshot='/bin/flameshot-workaround'
 alias clear='clear -x'
+alias cd='z'
 
 
 

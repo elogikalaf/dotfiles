@@ -39,17 +39,11 @@ eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/base.yaml)"
 
 # use vim Keybindings
 bindkey -v
+bindkey "^H" backward-delete-char
+bindkey "^?" backward-delete-char
 
 # Keybindings
 bindkey '^[w' kill-region
-
-# history search with up or down command
-autoload -U up-line-or-beginning-search
-autoload -U down-line-or-beginning-search
-zle -N up-line-or-beginning-search
-zle -N down-line-or-beginning-search
-bindkey "^[[A" up-line-or-beginning-search # Up
-bindkey "^[[B" down-line-or-beginning-search # Down
 
 # History
 HISTSIZE=5000
@@ -133,5 +127,18 @@ export EDITOR="/usr/bin/nvim"
 cheatsh() {
     curl cheat.sh/"$1"
 }
+
+# zoxide 
+eval "$(zoxide init zsh)"
+
+# history search with up or down command
+autoload -U up-line-or-beginning-search
+autoload -U down-line-or-beginning-search
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
+bindkey "^[[A" up-line-or-beginning-search # Up
+bindkey "^[0A" up-line-or-beginning-search # Up
+bindkey "^[[B" down-line-or-beginning-search # Down
+bindkey "^[0B" down-line-or-beginning-search # Down
 
 
