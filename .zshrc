@@ -12,7 +12,7 @@ fi
 source "${ZINIT_HOME}/zinit.zsh"
 
 # add ~/bin for ohmyposh and ruby gems exetubales
-export PATH="/home/elo/bin:$PATH"
+export PATH="/home/elo/.local/bin:$PATH"
 
 # Add in zsh plugins
 zinit light zsh-users/zsh-syntax-highlighting ## code zsh-syntax-highlighting
@@ -104,6 +104,12 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+#
+
+# add Apps home dir 
+export MYAPPS_HOME="/home/elo/Apps/"
+export PATH="$PATH:"
+# end Apps home dir
 
 # reverse search
 bindkey "^R" history-incremental-search-backward

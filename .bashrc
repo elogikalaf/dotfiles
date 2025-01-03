@@ -122,5 +122,3 @@ export LS_COLORS
 
 
 set -o vi is
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
