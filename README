@@ -1,0 +1,10 @@
+# requirements
+
+1. zsh 
+  - zinit (package mangaer) 
+  - zoxide (better cd) 
+  - thefuck
+2. tmux
+  - tpm
+3. stow
+4. neovim
