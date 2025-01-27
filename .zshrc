@@ -89,7 +89,7 @@ o3Login() {
         -H "sec-ch-ua: 'Chromium';v='118', 'Google Chrome';v='118', 'Not=A?Brand';v='99'" \
         -H "sec-ch-ua-mobile: ?0" \
         -H "sec-ch-ua-platform: 'Linux'" \
-        --data-raw "dst=&popup=true&username=4311453620&password=51vPJEtX" \
+        --data-raw "dst=&popup=true&username=4311453620&password=*" \
         --compressed --insecure https://192.168.12.1/login -s)
 
     h1_content=$(echo "$response" | awk -F'</h1>' '/<h1>/{print $1}' | awk -F'<h1>' '{print $NF}')
