@@ -21,6 +21,7 @@ zinit light zsh-users/zsh-autosuggestions # show suggestions based on history
 zinit light Aloxaf/fzf-tab # fuzzy find when tab autocomplete
 zinit light MichaelAquilina/zsh-auto-notify # auto-notify whnen a command is done running
 zinit light MichaelAquilina/zsh-you-should-use # tell me if an alias is there for this command
+zinit light soimort/translate-shell # termianl translate
 
 # Add in snippets, basically installs plugins from a url or a namespce
 zinit snippet OMZP::git # installs the git autocomplete and aliases from oh my zsh
