@@ -21,6 +21,7 @@ zinit light Aloxaf/fzf-tab # fuzzy find when tab autocomplete
 zinit light MichaelAquilina/zsh-auto-notify # auto-notify whnen a command is done running
 zinit light MichaelAquilina/zsh-you-should-use # tell me if an alias is there for this command
 zinit light soimort/translate-shell # termianl translate
+zinit light bilelmoussaoui/flatpak-zsh-completion # flatpak autocomplete
 
 # Add in snippets, basically installs plugins from a url or a namespce
 zinit snippet OMZP::git # installs the git autocomplete and aliases from oh my zsh
@@ -115,8 +116,6 @@ export PATH="$PATH:"
 # reverse search
 bindkey "^R" history-incremental-search-backward
 
-# thefuck
-eval $(thefuck --alias)
 
 ################# configuring PATH
 # adding cargo
@@ -149,3 +148,5 @@ bindkey "^[[B" down-line-or-beginning-search # Down
 bindkey "^[0B" down-line-or-beginning-search # Down
 
 
+# thefuck 
+eval $(thefuck --alias)
