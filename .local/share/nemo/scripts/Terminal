@@ -1,0 +1,2 @@
+#!/bin/sh
+~/.local/share/gnome-shell/extensions/ddterm@amezin.github.com/bin/com.github.amezin.ddterm --working-directory .

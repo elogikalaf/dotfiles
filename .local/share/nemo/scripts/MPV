@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# Find all files in current directory and check if they're video files
+find . -maxdepth 1 -type f -exec file --mime-type {} \; | grep "video/" | cut -d':' -f1 | sort | xargs -d'\n' mpv
