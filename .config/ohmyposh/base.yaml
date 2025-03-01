@@ -1,0 +1,79 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json
+
+palette:
+  blue: "#00ADEE"
+console_title_template: "{{ .Shell }} in {{ .Folder }}"
+blocks:
+  - type: prompt
+    alignment: left
+    segments:
+      - properties:
+          cache_duration: none
+          style: full
+        template: |-
+
+          {{ .Path }}
+        foreground: p:blue
+        background: transparent
+        type: path
+        style: plain
+      - properties:
+          branch_icon: ""
+          cache_duration: none
+          commit_icon: "@"
+          fetch_status: true
+          style: full
+        template: " {{ .HEAD }} {{ if or (.Working.Changed) (.Staging.Changed) }}*{{ end }}<red>{{ if gt .Behind 0 }}⇣ {{ .Behind }}{{ end }}</><red>{{ if gt .Ahead 0 }}⇡{{ .Ahead }}{{ end }}</>"
+        foreground: "#6c6c6c"
+        background: transparent
+        type: git
+        style: plain
+    newline: true
+  - type: prompt
+    alignment: right
+    segments:
+      - properties:
+          cache_duration: none
+          style: austin
+          threshold: 500
+        template: " <#fefefe>\ueba2</> {{ .FormattedMs }}"
+        foreground: yellow
+        powerline_symbol: 
+        background: transparent
+        type: executiontime
+        style: powerline
+  - type: prompt
+    alignment: right
+    segments:
+      - properties:
+          cache_duration: none
+          precision: 0
+        template: " \ue266 {{ round .PhysicalPercentUsed .Precision }}%"
+        foreground: yellow
+        background: transparent
+        type: sysinfo
+        style: plain
+        newline: true
+  - type: prompt
+    alignment: left
+    segments:
+      - properties:
+          cache_duration: none
+        template: ">"
+        background: transparent
+        type: text
+        style: plain
+        foreground_templates:
+          - "{{if gt .Code 0}}red{{end}}"
+          - "{{if eq .Code 0}}green{{end}}"
+  - type: prompt
+    alignment: left
+    segments:
+      - properties:
+          cache_duration: none
+        template: |
+
+        type: text
+        style: plain
+version: 3
+final_space: true
