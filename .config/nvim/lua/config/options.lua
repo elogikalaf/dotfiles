@@ -28,3 +28,5 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.bo.filetype = "yaml"
   end,
 })
+
+vim.g.autoformat = false
