@@ -24,6 +24,7 @@ alias nowdate='date +"%d-%m-%Y"' #this will show the current date in format dd-M
 alias clear='clear -x'
 alias cd='z'
 alias translate='xclip -o -sel clip | tr "\n" " " | trans --brief'
+alias GPUtemp='nvidia-smi -q -d temperature | grep Current '
 
 
 
