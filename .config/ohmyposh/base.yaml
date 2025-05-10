@@ -28,6 +28,10 @@ blocks:
         background: transparent
         type: git
         style: plain
+      - type: python
+        style: plain
+        foreground: "#FFD700"
+        template: "  {{ .Venv }}  "
     newline: true
   - type: prompt
     alignment: right
