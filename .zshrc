@@ -106,7 +106,7 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
-#
+
 
 # add Apps home dir 
 export MYAPPS_HOME="/home/elo/Apps/"
@@ -115,7 +115,6 @@ export PATH="$PATH:"
 
 # reverse search
 bindkey "^R" history-incremental-search-backward
-
 
 ################# configuring PATH
 # adding cargo
