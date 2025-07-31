@@ -146,10 +146,6 @@ bindkey "^[0A" up-line-or-beginning-search # Up
 bindkey "^[[B" down-line-or-beginning-search # Down
 bindkey "^[0B" down-line-or-beginning-search # Down
 
-
-# thefuck 
-eval $(thefuck --alias)
-
 # nvm path
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -168,7 +164,6 @@ export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init - bash)"
 eval "$(pyenv virtualenv-init -)"
-
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init - zsh)"
