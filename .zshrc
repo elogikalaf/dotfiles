@@ -66,9 +66,6 @@ zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}" # use ls colors for auto
 zstyle ':completion:*' menu no # disables the deafult zsh autocomplete tab so it can be replaced with fzf
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath' # allows to autocomplete fzf 
 
-# Aliases
-alias ls='ls --color'
-
 # adding all aliases
 . ~/.aliases
 
@@ -127,11 +124,6 @@ export PATH=$PATH:/home/elo/.spicetify
 
 ## set editor to vim
 export EDITOR="/usr/bin/nvim"
-
-## cheatsh alias 
-cheatsh() {
-    curl cheat.sh/"$1"
-}
 
 # zoxide 
 eval "$(zoxide init zsh)"
