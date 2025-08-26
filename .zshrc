@@ -95,6 +95,26 @@ o3Login() {
     echo "$h1_content"
 }
 
+sticker_ready() {
+  if [ $# -ne 2 ]; then
+    echo "Usage: process_image <input-file> <output-file>"
+    return 1
+  fi
+
+  local input="$1"
+  local output="$2"
+
+  magick "$input" \
+    -resize 512x512\> \
+    -background none \
+    -gravity center \
+    -alpha background \
+    -extent 512x512 \
+    -quality 90 \
+    "$output"
+}
+
+
 
 # pnpm
 export PNPM_HOME="/home/elo/.local/share/pnpm"
