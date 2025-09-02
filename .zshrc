@@ -179,3 +179,17 @@ eval "$(pyenv virtualenv-init -)"
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init - zsh)"
+
+
+# syntac highlighting in man
+export MANPAGER="sh -c 'awk '\''{ gsub(/\x1B\[[0-9;]*m/, \"\", \$0); gsub(/.\x08/, \"\", \$0); print }'\'' | bat -p -lman'"
+
+
+# add go executables to path 
+export PATH=$PATH:$HOME/go/bin
+
+
+
+
+# Load Angular CLI autocompletion.
+source <(ng completion script)
