@@ -28,7 +28,6 @@ zinit snippet OMZP::git # installs the git autocomplete and aliases from oh my z
 zinit snippet OMZP::sudo # execute with sudo by pressing esc twice
 zinit snippet OMZP::command-not-found ## allows zsh to suggest intalling a command if not found
 zinit snippet OMZP::dnf ## autocomplete and aliases for dnf
-zinit snippet OMZP::aliases ## lets you organize aliases with the als command
 
 # Load completions
 autoload -Uz compinit && compinit
