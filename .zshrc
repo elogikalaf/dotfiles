@@ -188,6 +188,16 @@ export MANPAGER="sh -c 'awk '\''{ gsub(/\x1B\[[0-9;]*m/, \"\", \$0); gsub(/.\x08
 export PATH=$PATH:$HOME/go/bin
 
 
+# add texlive to path
+export PATH=/usr/local/texlive/2025/bin/x86_64-linux:$PATH
+
+
+# audo
+autoload -Uz edit-command-line
+zle -N edit-command-line
+bindkey '^x^e' edit-command-line
+
+
 
 
 # Load Angular CLI autocompletion.
