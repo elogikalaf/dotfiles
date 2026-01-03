@@ -21,6 +21,10 @@ alias translate='xclip -o -sel clip | tr "\n" " " | trans --brief'
 alias GPUtemp='nvidia-smi -q -d temperature | grep Current '
 alias mc='java -jar ~/Games/Minecraft/Game/SKlauncher-3.2.12.jar'
 alias ls='ls --color'
+alias -s js='$EDITOR'
+alias -s ts='$EDITOR'
+alias -s py='$EDITOR'
+alias -s txt='bat'
 
 
 
