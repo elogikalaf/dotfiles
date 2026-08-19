@@ -25,6 +25,8 @@ alias -s js='$EDITOR'
 alias -s ts='$EDITOR'
 alias -s py='$EDITOR'
 alias -s txt='bat'
+alias ..='cd ..'
+alias ...='cd ../..'
 
 
 

@@ -10,6 +10,8 @@ fi
 # Source/Load zinit
 source "${ZINIT_HOME}/zinit.zsh"
 
+
+
 # add ~/bin for ohmyposh and ruby gems exetubales
 export PATH="/home/elo/.local/bin:$PATH"
 
@@ -29,11 +31,7 @@ zinit snippet OMZP::sudo # execute with sudo by pressing esc twice
 zinit snippet OMZP::command-not-found ## allows zsh to suggest intalling a command if not found
 zinit snippet OMZP::dnf ## autocomplete and aliases for dnf
 
-# Load completions
-autoload -Uz compinit && compinit
 
-# performance gain, suggested by the doc, idk what it does
-zinit cdreplay -q
 
 # Init oh-my-posh
 eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/base.yaml)"
@@ -142,7 +140,7 @@ export PATH=$PATH:/home/elo/.spicetify
 ################ done configuring PATH
 
 ## set editor to vim
-export EDITOR="/usr/bin/nvim"
+export EDITOR="/opt/homebrew/bin/nvim"
 
 # zoxide 
 eval "$(zoxide init zsh)"
@@ -171,14 +169,14 @@ source <(fzf --zsh)
 # the following to
 # ~/.bash_profile if it exists, otherwise ~/.profile (for login shells)
 # and ~/.bashrc (for interactive shells) :
-export PYENV_ROOT="$HOME/.pyenv"
-[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init - bash)"
-eval "$(pyenv virtualenv-init -)"
-export PYENV_ROOT="$HOME/.pyenv"
-[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init - zsh)"
-
+# export PYENV_ROOT="$HOME/.pyenv"
+# [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+# eval "$(pyenv init - bash)"
+# eval "$(pyenv virtualenv-init -)"
+# export PYENV_ROOT="$HOME/.pyenv"
+# [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+# eval "$(pyenv init - zsh)"
+#
 
 # syntac highlighting in man
 export MANPAGER="sh -c 'awk '\''{ gsub(/\x1B\[[0-9;]*m/, \"\", \$0); gsub(/.\x08/, \"\", \$0); print }'\'' | bat -p -lman'"
@@ -197,8 +195,18 @@ autoload -Uz edit-command-line
 zle -N edit-command-line
 bindkey '^x^e' edit-command-line
 
+# brew shellenv
+eval "$(brew shellenv)"
+
+. "$HOME/.local/bin/env"
+export PATH="$HOME/.local/bin:$PATH"
 
 
+# Load completions
+autoload -Uz compinit && compinit
 
-# Load Angular CLI autocompletion.
-source <(ng completion script)
+# python new version
+export PATH="/usr/local/bin:$PATH"
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/AD/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/AD/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
